@@ -1,0 +1,45 @@
+:root {
+  --linear-gradient: linear-gradient(to right, #b4ec51, #1a91eb);
+  --button-border-radius: 5rem;
+}
+
+.btn {
+  background-image: var(--linear-gradient);
+  border: none;
+  border-radius: var(--button-border-radius);
+  color: #fff;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 400;
+  padding: 1rem 3.5rem;
+  text-transform: uppercase;
+  transition: all 1s ease-in;
+  letter-spacing: 0.1rem;
+  text-decoration: none;
+}
+
+.btn:hover {
+  transform: scale(1.05); /* not working */
+}
+
+.btn::before {
+  --wrapper-padding: -0.5rem;
+  background: var(--linear-gradient);
+
+  border-radius: var(--button-border-radius);
+  bottom: var(--wrapper-padding);
+
+  content: "";
+  filter: blur(0.5rem);
+  left: var(--wrapper-padding);
+  opacity: 0.2;
+  position: absolute;
+  right: var(--wrapper-padding);
+  top: var(--wrapper-padding);
+  z-index: -1;
+}
+
+.btn-wrapper {
+  position: relative;
+  z-index: -2;
+}

@@ -1,0 +1,12 @@
+.nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.nav__logo {
+  height: 5rem;
+  filter: grayscale(100%) brightness(2);
+}
