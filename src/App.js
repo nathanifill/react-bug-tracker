@@ -1,13 +1,25 @@
+/* TODO - 
+1. stop empty descriptions from being added with bugs
+2. add undo resolve button
+3. make form look nice
+4. animate log out button
+5. build log in page
+6. responsive styles
+
+*/
+
 import { useState } from "react";
 import "./App.css";
 import { v4 as uuid } from "uuid";
 import BugListTable from "./components/BugListTable";
 import Navigation from "./components/Navigation";
+import Footer from "./components/Footer";
 
 function App() {
   const [bugDescription, setBugDescription] = useState("");
   const [bugPriority, setBugPriority] = useState("Medium");
   const [bugList, setBugList] = useState([]);
+  const [resolvedBugList, setResolvedBugList] = useState([]);
 
   const addBug = (event) => {
     event.preventDefault();
@@ -23,6 +35,17 @@ function App() {
     // Reset state and form
     setBugDescription("");
     setBugPriority("Medium");
+  };
+
+  const resolveBug = (resolvedBug) => {
+    const updatedBugList = bugList.filter((bug) => bug.id !== resolvedBug.id);
+    setBugList(updatedBugList);
+
+    // Add bug to bug list
+    setResolvedBugList((prevResolvedBugList) => [
+      ...prevResolvedBugList,
+      resolvedBug,
+    ]);
   };
 
   const deleteBug = (id) => {
@@ -41,10 +64,46 @@ function App() {
   return (
     <div className="App">
       <main className="main">
-        {/* <Navigation /> */}
+        <Navigation
+          resolvedBugs={resolvedBugList.length}
+          totalBugs={bugList.length + resolvedBugList.length}
+        />
 
-        <h1>Bug Tracker</h1>
-        <BugListTable bugList={bugList} onDeleteBug={deleteBug} />
+        <h2>🔴&emsp;High Priority</h2>
+        <BugListTable
+          bugList={bugList}
+          onResolveBug={resolveBug}
+          onDeleteBug={deleteBug}
+          priority="High"
+        />
+
+        <h2>🟠&emsp;Medium Priority</h2>
+        <BugListTable
+          bugList={bugList}
+          onResolveBug={resolveBug}
+          onDeleteBug={deleteBug}
+          priority="Medium"
+        />
+
+        <h2>🟡&emsp;Low Priority</h2>
+        <BugListTable
+          bugList={bugList}
+          onResolveBug={resolveBug}
+          onDeleteBug={deleteBug}
+          priority="Low"
+        />
+
+        <h2>🟢&emsp;Resolved Bugs</h2>
+        <BugListTable
+          bugList={resolvedBugList}
+          onResolveBug={resolveBug}
+          onDeleteBug={deleteBug}
+          resolved
+        />
+
+        <hr />
+        {/* <h1>Bug Tracker</h1>
+        <BugListTable bugList={bugList} onResolveBug={resolveBug} /> */}
         <form onSubmit={addBug} className="add-new-bug-form">
           <label htmlFor="bugDescription">Bug Description</label>
           <input
@@ -60,13 +119,14 @@ function App() {
             value={bugPriority}
             onChange={onBugPriorityChangeHandler}
           >
-            <option value="Low ">Low</option>
+            <option value="Low">Low</option>
             <option value="Medium">Medium</option>
             <option value="High">High</option>
           </select>
           <button type="submit">Add New Bug</button>
         </form>
       </main>
+      <Footer />
     </div>
   );
 }

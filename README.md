@@ -69,13 +69,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
-
-
-
-
-
-
-
 <!-- My stuff -->
+
 https://pixabay.com/vectors/bitcoin-currency-3d-icon-vector-2547132/
 https://www.behance.net/gallery/58941485/Worker-studio-task-tracker-%28desktop%29?tracking_source=search_projects_appreciations%7Csimple+tracker
+https://codepen.io/miraviolet/pen/ZobWEg
