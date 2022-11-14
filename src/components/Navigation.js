@@ -2,6 +2,7 @@ import "./Navigation.css";
 import "./Button.css";
 import ProgressBar from "./ProgressBar";
 import { formatNumber } from "../utils";
+import { Link } from "react-router-dom";
 
 const Navigation = (props) => {
   let progressValue = 0;
@@ -41,7 +42,7 @@ const Navigation = (props) => {
   return (
     <nav className="nav">
       <span className="nav__logo-container">
-        <img className="nav__logo" src="./img/logo-cropped.png" alt="Logo" />
+        <img className="nav__logo" src="../img/logo-cropped.png" alt="Logo" />
         <p className="nav__app-name">Bug Tracker</p>
       </span>
       <span className="nav__progress-bar-wrapper">
@@ -59,7 +60,9 @@ const Navigation = (props) => {
           Add New Bug
         </a>
         <span className="btn-wrapper">
-          <button className="btn btn--primary btn--log-out">Log out</button>
+          <Link to="/">
+            <button className="btn btn--primary btn--log-out">Log out</button>
+          </Link>
         </span>
       </div>
     </nav>

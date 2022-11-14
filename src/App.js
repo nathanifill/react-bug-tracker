@@ -15,7 +15,7 @@ import BugListTable from "./components/BugListTable";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import { FaCaretDown, FaCaretUp } from "react-icons/fa";
-import FormModal from "./components/Form/FormModal";
+import FormModal from "./components/AddNewBugForm/AddNewBugFormModal";
 import useLocalStorage from "./hooks/useLocalStorage";
 
 function App() {
