@@ -74,3 +74,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 https://pixabay.com/vectors/bitcoin-currency-3d-icon-vector-2547132/
 https://www.behance.net/gallery/58941485/Worker-studio-task-tracker-%28desktop%29?tracking_source=search_projects_appreciations%7Csimple+tracker
 https://codepen.io/miraviolet/pen/ZobWEg
+https://gist.github.com/niksumeiko/360164708c3b326bd1c8
+https://sebhastian.com/javascript-format-number-commas/
+https://www.youtube.com/watch?v=o76g5H-9qqY&ab_channel=codebubb
+https://www.bram.us/2021/01/28/form-validation-you-want-notfocusinvalid-not-invalid/
+
+https://codepen.io/hylobates-lar/pen/bGEQXgm

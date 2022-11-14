@@ -1,14 +1,19 @@
 import "./BugListTable.css";
 
 const BugListTable = (props) => {
-  const { bugList, onResolveBug, onDeleteBug, priority } = props;
+  const { bugList, onResolveBug, onDeleteBug, onUnresolveBug, priority } =
+    props;
 
-  const resolvedPressed = (bug) => {
+  const resolvePressed = (bug) => {
     onResolveBug(bug);
   };
 
   const deletePressed = (id) => {
     onDeleteBug(id);
+  };
+
+  const unresolvePressed = (bug) => {
+    onUnresolveBug(bug);
   };
 
   let filteredBugList = bugList;
@@ -33,31 +38,43 @@ const BugListTable = (props) => {
         <td className="table__cell">{bug.description}</td>
         <td className="table__cell">{bug.priority}</td>
         <td className="table__cell">
-          <span className="btn-wrapper">
-            {!props.resolved && (
+          {!props.resolved && (
+            <span className="btn-wrapper">
               <button
                 className="btn btn--secondary"
-                onClick={() => resolvedPressed(bug)}
+                onClick={() => resolvePressed(bug)}
               >
-                Resolved
+                Resolve
               </button>
-            )}
-            {!props.resolved && (
+            </span>
+          )}
+          {!props.resolved && (
+            <span className="btn-wrapper">
               <button
                 className="btn btn--danger"
                 onClick={() => deletePressed(bug.id)}
               >
                 Delete
               </button>
-            )}
-          </span>
+            </span>
+          )}
+          {props.resolved && (
+            <span className="btn-wrapper">
+              <button
+                className="btn btn--secondary"
+                onClick={() => unresolvePressed(bug)}
+              >
+                Unresolve
+              </button>
+            </span>
+          )}
         </td>
       </tr>
     ));
   }
 
   return (
-    <article className="table-container">
+    <div className="table-container">
       <table className="table">
         <thead className="table__head">
           <tr className="table__header-row">
@@ -68,7 +85,7 @@ const BugListTable = (props) => {
         </thead>
         <tbody>{tableBodyContent}</tbody>
       </table>
-    </article>
+    </div>
   );
 };
 

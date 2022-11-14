@@ -52,20 +52,42 @@ table th {
 
 @import url("https://fonts.googleapis.com/css2?family=Darker+Grotesque&family=Lato&family=Roboto:wght@400;700&family=Secular+One&display=swap");
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 :root {
   /* LINEAR GRADIENT */
   --first-gradient-colour: #b4ec51;
-  --second-gradient-color: #1a91eb;
+  --second-gradient-colour: #1a91eb;
   --linear-gradient: linear-gradient(
     to right,
     var(--first-gradient-colour),
-    var(--second-gradient-color)
+    var(--second-gradient-colour)
   );
   --selected-linear-gradient: linear-gradient(
-    to right,
-    var(--second-gradient-color),
+    to bottom right,
+    var(--second-gradient-colour),
     var(--first-gradient-colour)
   );
+
+  /* DANGER COLOURS */
+  --danger-colour-1: #fe5e41; /*#d1603d; /* #DA2C38; /* not using */
+  --danger-colour-2: #b10f2e; /* not using */
+  /* --danger-linear-gradient: linear-gradient(to right, red, darkred),
+  linear-gradient(to right, red, darkred); */
+  --danger-linear-gradient: linear-gradient(
+      to bottom right,
+      var(--danger-colour-1),
+      var(--danger-colour-2)
+    ),
+    linear-gradient(
+      to bottom right,
+      var(--danger-colour-1),
+      var(--danger-colour-2)
+    );
 
   /* BUTTON STYLES */
   --button-border-radius: 5rem;
@@ -78,6 +100,9 @@ table th {
   /* TABLE STYLES */
   --table-row-colour: #2d3033;
   --table-border-radius: 0.5rem;
+
+  /* MAX CONENT WIDTH */
+  --max-content-width: 120rem;
 }
 
 html {
@@ -88,25 +113,16 @@ html {
   overflow: scroll;
 }
 
-body {
+/* body {
   margin: 0;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: var(--header-color);
-  font-family: "Secular One", sans-serif;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-h2 {
-  font-size: 1.6rem;
-}
+body,
+html {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+} */
 
 .App {
   display: flex;
@@ -117,7 +133,27 @@ h2 {
 }
 
 .main {
-  max-width: 95rem;
+  max-width: var(--max-content-width); /* was 95rem */
   width: 100%;
-  margin-bottom: 10rem;
+  margin-bottom: auto;
+  min-height: calc(100vh - 7.5rem);
+}
+
+.heading--priority {
+  cursor: pointer;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.heading--main {
+  font-size: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.heading {
+  color: var(--header-color);
+  font-family: "Secular One", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  /* margin-bottom: 0; */
 }
