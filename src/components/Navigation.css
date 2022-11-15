@@ -1,23 +1,27 @@
 .nav {
-  width: 100%;
+  align-items: center;
   display: flex;
   justify-content: space-between;
-  align-items: center;
   position: relative;
+  width: 100%;
+}
+
+.nav__actions {
+  z-index: 1; /* required for button stacking context */
 }
 
 .nav__app-name {
-  margin-left: 1rem;
+  margin-left: 1.5rem;
 }
 
 .nav__link {
-  color: var(--header-color);
-  text-transform: uppercase;
-  margin-right: 2rem;
-  font-size: 1.1rem;
-  text-decoration: none;
+  color: var(--font-colour-1);
   font-family: "Lato";
+  font-size: 1.2rem;
   letter-spacing: 0.1rem;
+  margin-right: 2rem;
+  text-decoration: none;
+  text-transform: uppercase;
 
   transition: color 0.2s ease-in-out;
 }
@@ -27,28 +31,28 @@
 }
 
 .nav__logo {
+  filter: hue-rotate(160deg) brightness(2);
   height: 5rem;
-  filter: grayscale(100%) brightness(2);
   margin: 2rem 0;
 }
 
 .nav__logo-container {
-  display: flex;
   align-items: center;
-  color: var(--header-color);
-  font-size: 3rem;
+  color: var(--font-colour-1);
+  display: flex;
   font-family: "Secular One", "Roboto", sans-serif;
+  font-size: 3rem;
   text-transform: uppercase;
 }
 
 .nav__progress-bar-wrapper {
+  align-items: center;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
 }
 
 .nav__progress-description {
-  color: var(--light-font-color);
+  color: var(--font-colour-2);
   font-size: 1.6rem;
 }

@@ -1,35 +1,14 @@
 .table {
-  width: 100%;
   border-collapse: separate;
   border-spacing: 0 1.5rem;
-}
-
-.table__row {
-  color: #d5d5d6;
-  border-radius: 1rem;
-  overflow: none;
-  text-align: center;
-  height: 6.5rem;
-  border: none;
-  background-color: var(--table-row-colour);
-}
-
-.table__header-row {
-  background-color: none;
-  font-size: 1.4rem;
-  color: var(--light-font-color);
-  text-transform: uppercase;
-}
-
-.table__head {
-  /* background-color: #ccc; */
+  width: 100%;
 }
 
 .table__cell {
-  padding: 1.5rem;
   font-size: 1.8rem;
-  /* border-radius: 2rem; */
+  padding: 1.5rem;
   width: 33%;
+  z-index: 1; /* required for button stacking context */
 }
 
 .table__cell:first-of-type {
@@ -42,4 +21,21 @@
 
 .table-container {
   overflow-x: auto;
+}
+
+.table__header-row {
+  background-color: none;
+  color: var(--font-colour-2);
+  font-size: 1.4rem;
+  text-transform: uppercase;
+}
+
+.table__row {
+  background-color: var(--table-row-colour);
+  border: none;
+  border-radius: 1rem;
+  color: var(--font-colour-2);
+  height: 6.5rem;
+  overflow: none;
+  text-align: center;
 }

@@ -1,23 +1,18 @@
-import "../App.css";
+import "../globals.css";
 import { v4 as uuid } from "uuid";
 import BugListTable from "../components/BugListTable";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import { FaCaretDown, FaCaretUp } from "react-icons/fa";
-import AddNewBugFormModal from "../components/AddNewBugForm/AddNewBugFormModal";
+import FormModal from "../components/FormModal/FormModal";
 import useLocalStorage from "../hooks/useLocalStorage";
+import "../components/Ball.css";
+import { useEffect } from "react";
 
 const Dashboard = () => {
-  // const [bugDescription, setBugDescription] = useState("");
-  // const [bugPriority, setBugPriority] = useState("Medium");
-  // const [bugList, setBugList] = useState([]);
-  // const [resolvedBugList, setResolvedBugList] = useState([]);
-  // const [showHighPriorityBugList, setShowHighPriorityBugList] = useState(true);
-  // const [showMediumPriorityBugList, setShowMediumPriorityBugList] =
-  //   useState(true);
-  // const [showLowPriorityBugList, setShowLowPriorityBugList] = useState(true);
-  // const [showResolvedBugList, setShowResolvedBugList] = useState(true);
-  // const [showModal, setShowModal] = useState(false);
+  useEffect(() => {
+    document.title = "Dashboard | Bug Tracker";
+  }, []);
 
   const [bugDescription, setBugDescription] = useLocalStorage(
     "bugDescription",
@@ -134,7 +129,7 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="App">
+    <div className="app">
       <main className="main">
         <Navigation
           resolvedBugs={resolvedBugList.length}
@@ -150,7 +145,7 @@ const Dashboard = () => {
           }}
         >
           <h2 className="heading heading--priority">
-            🔴&emsp;High Priority
+            <span className="ball ball--high"></span>High Priority
             {showHighPriorityBugList ? <FaCaretUp /> : <FaCaretDown />}
           </h2>
         </span>
@@ -170,7 +165,7 @@ const Dashboard = () => {
           }}
         >
           <h2 className="heading heading--priority">
-            🟠&emsp;Medium Priority
+            <span className="ball ball--medium"></span>Medium Priority
             {showMediumPriorityBugList ? <FaCaretUp /> : <FaCaretDown />}
           </h2>
         </span>
@@ -190,7 +185,7 @@ const Dashboard = () => {
           }}
         >
           <h2 className="heading heading--priority">
-            🟡&emsp;Low Priority
+            <span className="ball ball--low"></span>Low Priority
             {showLowPriorityBugList ? <FaCaretUp /> : <FaCaretDown />}
           </h2>
         </span>
@@ -210,7 +205,7 @@ const Dashboard = () => {
           }}
         >
           <h2 className="heading heading--priority">
-            🟢&emsp;Resolved
+            <span className="ball ball--resolved"></span>Resolved
             {showResolvedBugList ? <FaCaretUp /> : <FaCaretDown />}
           </h2>
         </span>
@@ -223,19 +218,9 @@ const Dashboard = () => {
             resolved
           />
         )}
-        {/* <Form
-          addBug={addBug}
-          onBugDescriptionChangeHandler={onBugDescriptionChangeHandler}
-          onBugPriorityChangeHandler={onBugPriorityChangeHandler}
-          bugDescription={bugDescription}
-          bugPriority={bugPriority}
-        />
-        <hr /> */}
-        {/* <h1>Bug Tracker</h1>
-        <BugListTable bugList={bugList} onResolveBug={resolveBug} /> */}
       </main>
       <Footer />
-      <AddNewBugFormModal
+      <FormModal
         onClickHandler={toggleModal}
         showModal={showModal}
         addBug={addBug}
@@ -243,7 +228,7 @@ const Dashboard = () => {
         onBugPriorityChangeHandler={onBugPriorityChangeHandler}
         bugDescription={bugDescription}
         bugPriority={bugPriority}
-      ></AddNewBugFormModal>
+      ></FormModal>
     </div>
   );
 };

@@ -1,0 +1,24 @@
+form input,
+form select {
+  background-color: inherit;
+  border: #444 0.1rem solid;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  color: var(--font-colour-1);
+  font-family: "Lato", sans-serif;
+  padding: 1rem;
+  transition: border-color 0.2s ease-in-out;
+  width: 100%;
+  margin-bottom: 1rem;
+  outline: none;
+}
+
+form input:focus,
+form select:focus {
+  border-color: var(--font-colour-1);
+}
+
+/* Only show invalid border colour if not focused and placeholder not shown */
+form input:not(:focus):not(:placeholder-shown):invalid {
+  border-color: var(--danger-colour-1);
+}

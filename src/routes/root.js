@@ -1,20 +1,25 @@
 import Footer from "../components/Footer";
-import Form from "../components/AddNewBugForm/AddNewBugForm";
+import LogInForm from "../components/LogInForm/LogInForm";
 import styles from "./Root.module.css";
+import { useEffect } from "react";
+import "../globals.css";
 
 const Root = () => {
+  useEffect(() => {
+    document.title = "Home | Bug Tracker";
+  }, []);
+
   return (
-    <div className={styles.app}>
+    <div className="app">
       <main className={styles.main}>
-        {/* <div className={styles.overlay}></div> */}
         <div className={styles.flexcontainer}>
-          <Form />
+          <LogInForm />
           <img
             className={styles.img}
-            alt="Lorem ipsum"
-            src="./img/vespa-cropped.png"
+            alt="Bug Tracker"
+            src="./img/evil-ladybird.png"
           ></img>
-          {/* TODO: Update alt tag */}
+          {/* angry bug i don't like on second time around, bug shield (logo), butterflies are great. maybe i could use some sort of animation to change their colours too (home page), i like cute-ladybird but its legs blend in so it's a no., evil ladybird is funny and could be good on the home page (home page), 3d-ladybird could be a logo  */}
         </div>
       </main>
       <Footer />

@@ -1,0 +1,62 @@
+.flexcontainer {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.img {
+  /* filter: grayscale(100%) brightness(2); */
+  filter: hue-rotate(200deg);
+  max-height: 50vh;
+  animation: moveBug 30s ease-in infinite forwards;
+}
+
+.main {
+  align-items: center;
+  display: flex;
+  filter: blur(0);
+  flex-grow: 1;
+  justify-content: space-around;
+  position: relative;
+  width: var(--max-content-width);
+  z-index: 0;
+}
+/* Animation to gently move the bug (insect) around */
+@keyframes moveBug {
+  0% {
+    transform: translate(3px, 3px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-3px, -6px) rotate(-3deg);
+  }
+  20% {
+    transform: translate(-9px, 0px) rotate(3deg);
+  }
+  30% {
+    transform: translate(9px, 6px) rotate(0deg);
+  }
+  40% {
+    transform: translate(3px, -3px) rotate(3deg);
+  }
+  50% {
+    transform: translate(-3px, 6px) rotate(-3deg);
+  }
+  60% {
+    transform: translate(-9px, 3px) rotate(0deg);
+  }
+  70% {
+    transform: translate(9px, 3px) rotate(-3deg);
+  }
+  80% {
+    transform: translate(-3px, -3px) rotate(3deg);
+  }
+  90% {
+    transform: translate(3px, 6px) rotate(0deg);
+  }
+  100% {
+    transform: translate(3px, 3px) rotate(0deg);
+  }
+}

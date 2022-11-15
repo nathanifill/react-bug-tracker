@@ -1,0 +1,110 @@
+/* INSPO - https://www.behance.net/gallery/58941485/Worker-studio-task-tracker-%28desktop%29?tracking_source=search_projects_appreciations%7Csimple+tracker */
+
+@import url("https://fonts.googleapis.com/css2?family=Darker+Grotesque&family=Lato&family=Roboto:wght@400;700&family=Secular+One&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* MAIN COLOUR SCHEME */
+  --colour-primary: #22242a;
+  --colour-secondary: #2d3035;
+  --colour-tertiary: #777;
+
+  /* BUTTON STYLES */
+  --button-border-radius: 5rem;
+  --wrapper-padding: -0.5rem;
+
+  /* FONT-STYLES */
+  --font-colour-1: #fff;
+  --font-colour-2: #ccc;
+
+  /* TABLE STYLES */
+  --table-row-colour: var(--colour-secondary);
+  --table-border-radius: 0.5rem;
+
+  /* MAX CONENT WIDTH */
+  --max-content-width: 120rem;
+
+  /* LINEAR GRADIENT */
+  --first-gradient-colour: #b4ec51;
+  --second-gradient-colour: #1a91eb;
+  --linear-gradient: linear-gradient(
+    to right,
+    var(--first-gradient-colour),
+    var(--second-gradient-colour)
+  );
+  --selected-linear-gradient: linear-gradient(
+    to bottom right,
+    var(--second-gradient-colour),
+    var(--first-gradient-colour)
+  );
+
+  /* DANGER COLOURS */
+  --danger-colour-1: #fe5e41; /*#d1603d; /* #DA2C38; /* not using */
+  --danger-colour-2: #b10f2e; /* not using */
+  /* --danger-linear-gradient: linear-gradient(to right, red, darkred),
+  linear-gradient(to right, red, darkred); */
+  --danger-linear-gradient: linear-gradient(
+      to bottom right,
+      var(--danger-colour-1),
+      var(--danger-colour-2)
+    ),
+    linear-gradient(
+      to bottom right,
+      var(--danger-colour-1),
+      var(--danger-colour-2)
+    );
+}
+
+.app {
+  align-items: center;
+  background: linear-gradient(
+    to bottom right,
+    rgba(34, 36, 42, 1),
+    rgba(34, 36, 42, 1)
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.heading {
+  align-items: center;
+  color: var(--font-colour-1);
+  display: flex;
+  font-family: "Secular One", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.heading--main {
+  font-size: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.heading--priority {
+  cursor: pointer;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+html {
+  background-color: var(--colour-primary);
+  font-family: "Lato", sans-serif;
+  font-size: 62.5%;
+  overflow: scroll;
+  scroll-behavior: smooth;
+}
+
+.main {
+  margin-bottom: auto;
+  max-width: var(--max-content-width);
+  min-height: calc(100vh - 7.5rem);
+  width: 100%;
+}

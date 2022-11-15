@@ -39,34 +39,31 @@ const BugListTable = (props) => {
         <td className="table__cell">{bug.priority}</td>
         <td className="table__cell">
           {!props.resolved && (
-            <span className="btn-wrapper">
+
               <button
                 className="btn btn--secondary"
                 onClick={() => resolvePressed(bug)}
               >
                 Resolve
               </button>
-            </span>
           )}
           {!props.resolved && (
-            <span className="btn-wrapper">
+
               <button
                 className="btn btn--danger"
                 onClick={() => deletePressed(bug.id)}
               >
                 Delete
               </button>
-            </span>
           )}
           {props.resolved && (
-            <span className="btn-wrapper">
+
               <button
                 className="btn btn--secondary"
                 onClick={() => unresolvePressed(bug)}
               >
                 Unresolve
               </button>
-            </span>
           )}
         </td>
       </tr>

@@ -1,23 +1,19 @@
 .footer {
   align-items: center;
-  background-color: #2d3035;
+  background-color: var(--colour-secondary);
   display: flex;
   font-family: inherit;
   font-size: 1.4rem;
   justify-content: center;
   letter-spacing: 0.1rem;
+  min-height: 6rem;
   text-transform: uppercase;
   width: 100%;
-  /* margin-top: 5rem; */
-
-  /* position: sticky;
-  bottom: 0; */
-  min-height: 6rem;
 }
 
 .footer__content {
   align-items: center;
-  color: #ccc;
+  color: var(--font-colour-2);
   display: flex;
   justify-content: space-between;
   max-width: var(--max-content-width);
@@ -41,34 +37,27 @@
 
 .footer__link {
   text-decoration: none;
-  /* font-family: "Lato"; */
-  /* letter-spacing: 0.1rem; */
-
   transition: color 0.2s ease-in-out;
 }
 
 .footer__link:link,
 .footer__link:visited {
   align-items: center;
-  color: #ccc;
+  color: var(--font-colour-2);
   display: flex;
 }
 
 .footer__link:hover,
 .footer__link:focus {
-  /* background-image: var(--linear-gradient);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; */
   color: var(--first-gradient-colour);
 }
 
 .footer__link:active {
-  color: #ccc;
+  color: var(--font-colour-2);
 }
 
 .react-icons {
-  color: #777;
+  color: var(--colour-tertiary);
   margin-right: 0.5rem;
   transition: color 0.2s ease-in-out;
 }

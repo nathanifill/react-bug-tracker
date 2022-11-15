@@ -42,7 +42,11 @@ const Navigation = (props) => {
   return (
     <nav className="nav">
       <span className="nav__logo-container">
-        <img className="nav__logo" src="../img/logo-cropped.png" alt="Logo" />
+        <img
+          className="nav__logo"
+          src="../img/bug-shield-cropped.png"
+          alt="Logo"
+        />
         <p className="nav__app-name">Bug Tracker</p>
       </span>
       <span className="nav__progress-bar-wrapper">
@@ -53,17 +57,15 @@ const Navigation = (props) => {
         >
           {greeting} {bugsExist ? bugCount : null}
         </label>
-        {/* TODO: add comma formatting to resolved bugs and total bugs */}
       </span>
-      <div>
+      <div className="nav__actions">
         <a href="#top" onClick={props.onAddNewBug} className="nav__link">
           Add New Bug
         </a>
-        <span className="btn-wrapper">
-          <Link to="/">
-            <button className="btn btn--primary btn--log-out">Log out</button>
-          </Link>
-        </span>
+        {/* FAKE LOG OUT */}
+        <Link to="/">
+          <button className="btn btn--primary btn--log-out">Log out</button>
+        </Link>
       </div>
     </nav>
   );

@@ -1,12 +1,12 @@
 progress,
 ::-webkit-progress-bar {
   appearance: none;
-  background-color: #525458;
-  height: 0.5rem;
+  background-color: var(--colour-tertiary);
   border-radius: 1rem;
   display: block;
-  width: 17rem;
+  height: 0.5rem;
   margin-right: 2rem;
+  width: 17rem;
 }
 
 ::-webkit-progress-value {

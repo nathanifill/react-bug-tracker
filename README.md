@@ -78,5 +78,10 @@ https://gist.github.com/niksumeiko/360164708c3b326bd1c8
 https://sebhastian.com/javascript-format-number-commas/
 https://www.youtube.com/watch?v=o76g5H-9qqY&ab_channel=codebubb
 https://www.bram.us/2021/01/28/form-validation-you-want-notfocusinvalid-not-invalid/
-
 https://codepen.io/hylobates-lar/pen/bGEQXgm
+
+<!-- TODO:
+- add css variables for all colours
+- responsive styles
+- finish readme
+-->

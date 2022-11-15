@@ -1,0 +1,26 @@
+.form-modal {
+  --transition-duration: 0.2s;
+  backdrop-filter: blur(0rem);
+  background-color: rgba(0, 0, 0, 0);
+  display: none;
+  transition: backdrop-filter var(--transition-duration) ease-in-out,
+    background-color var(--transition-duration) ease-in-out;
+}
+
+.form-modal.show {
+  align-items: center;
+  backdrop-filter: blur(0.5rem);
+  background-color: rgba(0, 0, 0, 0.5);
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 3;
+}
+
+#modal {
+  cursor: pointer;
+}

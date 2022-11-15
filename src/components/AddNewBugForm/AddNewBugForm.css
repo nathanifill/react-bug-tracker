@@ -1,0 +1,66 @@
+.add-new-bug-form {
+  align-items: center;
+  background-color: var(--colour-secondary);
+  border-radius: 1rem;
+  box-shadow: 0 0 10rem 0rem rgba(0, 0, 0, 0.75);
+  cursor: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 2rem;
+  max-width: 45rem;
+  padding: 6rem 9rem;
+  position: relative;
+  width: 100%;
+  z-index: 1; /* required for button stacking context */
+}
+
+.add-new-bug-form,
+.add-new-bug-form * {
+  opacity: 1;
+}
+
+.add-new-bug-form.hide,
+.add-new-bug-form.hide * {
+  opacity: 0;
+}
+
+.add-new-bug-form__heading,
+.add-new-bug-form__label {
+  color: var(--font-colour-1);
+  font-family: "Secular One", sans-serif;
+  font-size: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.add-new-bug-form__heading {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.add-new-bug-form__icon--bug {
+  color: var(--first-gradient-colour);
+  font-size: 4rem;
+  margin-bottom: 2rem;
+}
+
+.add-new-bug-form__icon--close {
+  color: var(--font-colour-1);
+  cursor: pointer;
+  font-size: 2rem;
+  margin: 2rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.add-new-bug-form__label {
+  align-self: flex-start;
+  font-size: 1.4rem;
+  margin-bottom: 1.2rem;
+}
+
+.add-new-bug-form__select {
+  margin-bottom: 2rem;
+}
