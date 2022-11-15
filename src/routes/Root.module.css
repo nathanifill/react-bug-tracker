@@ -9,9 +9,9 @@
 
 .img {
   /* filter: grayscale(100%) brightness(2); */
-  filter: hue-rotate(200deg);
+  filter: hue-rotate(200deg) drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.5));
   max-height: 50vh;
-  animation: moveBug 30s ease-in infinite forwards;
+  animation: moveBug 10s ease-in-out infinite forwards;
 }
 
 .main {
@@ -24,6 +24,18 @@
   width: var(--max-content-width);
   z-index: 0;
 }
+
+@media (max-width: 1200px) {
+  .img {
+    display: none;
+  }
+
+  .main {
+    margin: 3rem;
+    width: 100%;
+  }
+}
+
 /* Animation to gently move the bug (insect) around */
 @keyframes moveBug {
   0% {

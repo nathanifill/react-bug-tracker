@@ -65,3 +65,36 @@
 .footer__link:hover .react-icons {
   color: var(--first-gradient-colour);
 }
+
+/* RESPONSIVE STYLES */
+@media (max-width: 1200px) {
+  .footer {
+    padding: 2rem;
+  }
+
+  .footer__content {
+    margin: 0 2rem;
+  }
+}
+
+@media (max-width: 650px) {
+  .footer__content {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .footer__copyright {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .footer__link {
+    flex-direction: column;
+  }
+
+  .react-icons {
+    font-size: 3rem;
+    margin: 0 0 0.5rem;
+  }
+}
