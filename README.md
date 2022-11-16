@@ -1,86 +1,45 @@
-# Getting Started with Create React App
+# React Bug Tracker
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a React-based bug tracker with a log in page, a few animations, and a dashboard for resolving, deleting and prioritising bugs.
 
-## Available Scripts
+It also has an option to unresolve any bugs which have been erroneously resolved, and it features a progress bar to show how well you're doing in terms of resolving them.
 
-In the project directory, you can run:
+The app uses local storage to save the state of the bugs and reloads them from there once "logged in". The log in authentication is currently non-existent, as my intention was to build the user interface with React as opposed to a full-stack app with a backend.
 
-### `npm start`
+## Demo
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+https://cute-blancmange-6cf41e.netlify.app/
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
 
-### `npm test`
+- Log in form
+- Fully responsive on all devices
+- Option to categorise bugs by priority
+- Saves in local storage
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation
 
-### `npm run build`
+Once you've downloaded the repo, just install it by typing in npm install into your terminal.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+  npm install react-bug-tracker
+  cd react-bug-tracker
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Authors
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [@nathanifill](https://www.github.com/nathanifill)
 
-### `npm run eject`
+## Feedback
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+If you have any feedback, please reach out to me on [Twitter](https://www.twitter.com/nathanifill).
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Acknowledgements
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-<!-- My stuff -->
-
-https://pixabay.com/vectors/bitcoin-currency-3d-icon-vector-2547132/
-https://www.behance.net/gallery/58941485/Worker-studio-task-tracker-%28desktop%29?tracking_source=search_projects_appreciations%7Csimple+tracker
-https://codepen.io/miraviolet/pen/ZobWEg
-https://gist.github.com/niksumeiko/360164708c3b326bd1c8
-https://sebhastian.com/javascript-format-number-commas/
-https://www.youtube.com/watch?v=o76g5H-9qqY&ab_channel=codebubb
-https://www.bram.us/2021/01/28/form-validation-you-want-notfocusinvalid-not-invalid/
-https://codepen.io/hylobates-lar/pen/bGEQXgm
-https://stackoverflow.com/questions/46586165/react-conditionally-render-based-on-viewport-size
-
-<!-- TODO:
-- finish readme
--->
+- [CodeBubb's React Bug Tracker Project (which inspired me to make this one)](https://www.youtube.com/watch?v=o76g5H-9qqY&ab_channel=codebubb)
+- [Vik Evstifeev's Design](https://www.behance.net/gallery/58941485/Worker-studio-task-tracker-%28desktop%29?)
+- [Mira Violet's CSS Gradient Border CodePen](https://codepen.io/miraviolet/pen/ZobWEg)
+- [Bramus Van Damme's mad CSS form validation skills](https://www.bram.us/2021/01/28/form-validation-you-want-notfocusinvalid-not-invalid/)
+- [Nik Sumeiko's Gist to prevent autocomplete](https://gist.github.com/niksumeiko/360164708c3b326bd1c8)
+- [Nathan Sebhastian's number formatting function](https://sebhastian.com/javascript-format-number-commas/)
+- [Foakesm's amazing Stack Overflow solution to adjust state based off of viewport width](https://stackoverflow.com/questions/46586165/react-conditionally-render-based-on-viewport-size)
