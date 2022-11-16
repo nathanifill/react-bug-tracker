@@ -1,7 +1,10 @@
 import "./BugListTable.css";
+import { FaTimes, FaUndo, FaCheck } from "react-icons/fa";
 
 const BugListTable = (props) => {
-  const { bugList, onResolveBug, onDeleteBug, onUnresolveBug, priority } =
+
+
+  const { bugList, onResolveBug, onDeleteBug, onUnresolveBug, priority, isTinyScreen } =
     props;
 
   const resolvePressed = (bug) => {
@@ -23,47 +26,55 @@ const BugListTable = (props) => {
   }
 
   let tableBodyContent = (
-    <tr className="table__row">
-      <td className="table__cell">
+    <tr className="table__row table__row--empty">
+      <td className="table__cell" colSpan="3">
         No {priority ? priority.toLowerCase() + " priority " : null} bugs found.
       </td>
-      <td className="table__cell"></td>
-      <td className="table__cell"></td>
     </tr>
   );
 
   if (filteredBugList.length > 0) {
     tableBodyContent = filteredBugList.map((bug) => (
       <tr className="table__row" key={bug.id}>
-        <td className="table__cell">{bug.description}</td>
-        <td className="table__cell">{bug.priority}</td>
+        <td className="table__cell">
+          {isTinyScreen && (
+            <span
+              className={`ball ball--table ball--${bug.priority.toLowerCase()}`}
+            ></span>
+          )}
+          <p>{bug.description}</p>
+        </td>
+        {props.resolved && !isTinyScreen && (
+          <td className="table__cell">
+            <p>{bug.priority}</p>
+          </td>
+        )}
         <td className="table__cell">
           {!props.resolved && (
-
-              <button
-                className="btn btn--secondary"
-                onClick={() => resolvePressed(bug)}
-              >
-                Resolve
-              </button>
+            <button
+              className="btn btn--secondary"
+              onClick={() => resolvePressed(bug)}
+            >
+              {/* Shows different text based on window width */}
+              {!isTinyScreen ? "Resolve" : <FaCheck aria-label="Resolve" />}
+            </button>
           )}
           {!props.resolved && (
-
-              <button
-                className="btn btn--danger"
-                onClick={() => deletePressed(bug.id)}
-              >
-                Delete
-              </button>
+            <button
+              className="btn btn--danger"
+              onClick={() => deletePressed(bug.id)}
+            >
+              {!isTinyScreen ? "Delete" : <FaTimes aria-label="Delete" />}
+            </button>
           )}
           {props.resolved && (
-
-              <button
-                className="btn btn--secondary"
-                onClick={() => unresolvePressed(bug)}
-              >
-                Unresolve
-              </button>
+            <button
+              className="btn btn--secondary"
+              onClick={() => unresolvePressed(bug)}
+            >
+              {/* Shows different text based on window width */}
+              {!isTinyScreen ? "Unresolve" : <FaUndo aria-label="Unresolve" />}
+            </button>
           )}
         </td>
       </tr>
@@ -75,9 +86,11 @@ const BugListTable = (props) => {
       <table className="table">
         <thead className="table__head">
           <tr className="table__header-row">
-            <th>Description</th>
-            <th>Priority</th>
-            <th>Actions</th>
+            <th className="table__header">Description</th>
+            {props.resolved && !isTinyScreen && (
+              <th className="table__header">Priority</th>
+            )}
+            <th className="table__header">Actions</th>
           </tr>
         </thead>
         <tbody>{tableBodyContent}</tbody>

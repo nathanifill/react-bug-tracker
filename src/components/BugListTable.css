@@ -23,6 +23,10 @@
   overflow-x: auto;
 }
 
+.table__header {
+  padding: 0 2rem;
+}
+
 .table__header-row {
   background-color: none;
   color: var(--font-colour-2);
@@ -38,4 +42,11 @@
   height: 6.5rem;
   overflow: none;
   text-align: center;
+}
+
+/* RESPONSIVE STYLES */
+@media (max-width: 1200px) {
+  .table-container {
+    margin: 2rem;
+  }
 }

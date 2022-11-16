@@ -3,6 +3,7 @@ import "./Button.css";
 import ProgressBar from "./ProgressBar";
 import { formatNumber } from "../utils";
 import { Link } from "react-router-dom";
+import { MdLogout } from "react-icons/md";
 
 const Navigation = (props) => {
   let progressValue = 0;
@@ -64,7 +65,9 @@ const Navigation = (props) => {
         </a>
         {/* FAKE LOG OUT */}
         <Link to="/">
-          <button className="btn btn--primary btn--log-out">Log out</button>
+          <button className="btn btn--primary btn--log-out">
+            {props.isTinyScreen ? <MdLogout /> : "Log out"}
+          </button>
         </Link>
       </div>
     </nav>

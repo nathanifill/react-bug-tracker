@@ -64,3 +64,9 @@
 .add-new-bug-form__select {
   margin-bottom: 2rem;
 }
+
+@media (max-width: 600px) {
+  .add-new-bug-form {
+    padding: 4rem;
+  }
+}

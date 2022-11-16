@@ -79,9 +79,8 @@ https://sebhastian.com/javascript-format-number-commas/
 https://www.youtube.com/watch?v=o76g5H-9qqY&ab_channel=codebubb
 https://www.bram.us/2021/01/28/form-validation-you-want-notfocusinvalid-not-invalid/
 https://codepen.io/hylobates-lar/pen/bGEQXgm
+https://stackoverflow.com/questions/46586165/react-conditionally-render-based-on-viewport-size
 
 <!-- TODO:
-- add css variables for all colours
-- responsive styles
 - finish readme
 -->

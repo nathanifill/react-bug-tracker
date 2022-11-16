@@ -107,4 +107,15 @@ html {
   max-width: var(--max-content-width);
   min-height: calc(100vh - 7.5rem);
   width: 100%;
+  padding: 2rem;
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 50%;
+  }
+
+  .heading {
+    justify-content: center;
+  }
 }

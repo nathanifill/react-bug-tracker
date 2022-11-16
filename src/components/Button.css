@@ -14,6 +14,10 @@
   transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
 }
 
+.btn--blur {
+  transition: transform 0.2s ease-in-out;
+}
+
 .btn--primary {
   background-image: var(--linear-gradient);
 }
@@ -27,7 +31,8 @@
 }
 
 .btn--primary::before,
-.btn--secondary:hover::before {
+.btn--secondary:hover::before,
+.btn--blur::before {
   background-image: var(--linear-gradient);
 }
 
@@ -37,7 +42,8 @@
 
 .btn--primary::before,
 .btn--secondary:hover::before,
-.btn--danger:hover::before {
+.btn--danger:hover::before,
+.btn--blur::before {
   border-radius: inherit;
   bottom: var(--wrapper-padding);
   content: "";
@@ -55,7 +61,7 @@
   background-origin: border-box;
   border: solid 1px transparent;
   box-shadow: 2px 1000px 1px var(--table-row-colour) inset;
-  margin: 0 0.5rem;
+  margin: 0.5rem;
 }
 
 .btn:hover {
@@ -68,6 +74,28 @@
   transform: translate(0rem, -0.1rem);
 }
 
+.btn--blur:active {
+  transform: scale(0.97);
+}
+
 /* RESPONSIVE STYLES */
-@media (max-width: 400px) {
+
+@media (max-width: 1200px) {
+  .btn--log-out {
+    position: absolute;
+    right: 0rem;
+    top: 0rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .btn--log-out {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 300px) {
+  .btn--log-out {
+    padding: 1rem 2rem;
+  }
 }

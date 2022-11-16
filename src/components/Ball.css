@@ -7,7 +7,11 @@
   width: 2rem;
 }
 
-.ball:hover {
+.ball.ball--table {
+  margin-right: 0rem;
+}
+
+.ball:not(.ball--table):hover {
   transform: scale(1.1);
 }
 
@@ -25,4 +29,10 @@
 
 .ball--resolved {
   background-image: linear-gradient(to bottom right, green, lightgreen);
+}
+
+@media (max-width: 600px) {
+  .ball {
+    margin-right: 1rem;
+  }
 }

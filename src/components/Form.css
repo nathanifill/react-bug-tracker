@@ -23,3 +23,11 @@ form select:focus {
 form input:not(:focus):not(:placeholder-shown):invalid {
   border-color: var(--danger-colour-1);
 }
+
+/* RESPONSIVE STYLES */
+@media (max-width: 300px) {
+  form input,
+  form select {
+    font-size: 1.6rem;
+  }
+}

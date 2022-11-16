@@ -7,9 +7,21 @@ import { FaCaretDown, FaCaretUp } from "react-icons/fa";
 import FormModal from "../components/FormModal/FormModal";
 import useLocalStorage from "../hooks/useLocalStorage";
 import "../components/Ball.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import AddNewBugButton from "../components/AddNewBugButton/AddNewBugButton";
 
 const Dashboard = () => {
+  const [isTinyScreen, setIsTinyScreen] = useState(window.innerWidth < 600);
+
+  const updateScreenState = () => {
+    setIsTinyScreen(window.innerWidth < 600);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", updateScreenState);
+    return () => window.removeEventListener("resize", updateScreenState);
+  });
+
   useEffect(() => {
     document.title = "Dashboard | Bug Tracker";
   }, []);
@@ -135,6 +147,7 @@ const Dashboard = () => {
           resolvedBugs={resolvedBugList.length}
           totalBugs={bugList.length + resolvedBugList.length}
           onAddNewBug={toggleModal}
+          isTinyScreen={isTinyScreen}
         />
 
         <h1 className="heading heading--main">YOUR TICKETS</h1>
@@ -155,6 +168,7 @@ const Dashboard = () => {
             onResolveBug={resolveBug}
             onDeleteBug={deleteBug}
             priority="High"
+            isTinyScreen={isTinyScreen}
           />
         )}
 
@@ -175,6 +189,7 @@ const Dashboard = () => {
             onResolveBug={resolveBug}
             onDeleteBug={deleteBug}
             priority="Medium"
+            isTinyScreen={isTinyScreen}
           />
         )}
 
@@ -195,6 +210,7 @@ const Dashboard = () => {
             onResolveBug={resolveBug}
             onDeleteBug={deleteBug}
             priority="Low"
+            isTinyScreen={isTinyScreen}
           />
         )}
 
@@ -216,8 +232,10 @@ const Dashboard = () => {
             onDeleteBug={deleteBug}
             onUnresolveBug={unresolveBug}
             resolved
+            isTinyScreen={isTinyScreen}
           />
         )}
+        <AddNewBugButton onAddNewBug={toggleModal} />
       </main>
       <Footer />
       <FormModal
