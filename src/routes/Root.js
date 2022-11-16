@@ -10,7 +10,7 @@ const Root = () => {
   }, []);
 
   return (
-    <div className="app">
+    <div className="app app--root">
       <main className={styles.main}>
         <div className={styles.flexcontainer}>
           <LogInForm />
